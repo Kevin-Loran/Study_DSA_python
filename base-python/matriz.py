@@ -1,8 +1,12 @@
 import numpy as np
 
-matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+matriz = np.array([[3, 4, 1], [3, 1, 5]])
 
-#acessando indice por indice:
+soma = 0
 for i in range(matriz.shape[0]):
     for j in range(matriz.shape[1]):
-        print(matriz[i][j])
+        soma += matriz[i][j]
+
+print("=" *30)
+print(f"a soma dos valores da matriz é de: {soma}")
+print("=" *30)
