@@ -2,7 +2,6 @@ def ler_celsius():
     celsius = float(input("Digite a temperatura[C]: "))
     calcula_Fahrenheit(celsius)
 
-
 def calcula_Fahrenheit(celsius):
     F = (9 * celsius + 160) / 5
     mostra_resultado(F, celsius)
