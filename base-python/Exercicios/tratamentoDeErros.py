@@ -3,8 +3,15 @@ contador = 0
 while True:
     try:
       valor = int(input("Digite um valor: "))
-    except:
-        print("valor invalido. Digite um numero inteiro.")
+    except IndexError:
+        print("Erro, indice invalido")
+        break
+    except ValueError:
+        print("Erro, valor invalido")
+        break
+    except KeyboardInterrupt:
+        print("Erro, usuário interrompeu o programa")
+        break
     else:
         lista.append(valor)
         contador += 1
