@@ -23,6 +23,19 @@ class VetorOrdenado:
             elif self.vetor[i] == valor:
                 return i
 
+    def pesquisa_binaria(self, valor):
+        limite_inferior = 0
+        limite_superior = self.ultima_posicao
+        posicao_atual = 0
+        while True:
+            posicao_atual = int((limite_inferior + limite_superior) / 2)
+            if self.vetor[posicao_atual] == valor:
+                return posicao_atual
+            elif valor > self.vetor[posicao_atual]:
+                limite_inferior = posicao_atual + 1
+            elif valor < self.vetor[posicao_atual]:
+                limite_superior = posicao_atual - 1
+
     def insercao(self, valor):
         if self.ultima_posicao == self.capacidade - 1:
             print("Capacidade do vetor atingida!!")
@@ -52,13 +65,11 @@ class VetorOrdenado:
             print(f"{i} - {self.vetor[i]}")
 
 vetor = VetorOrdenado(5)
+vetor.insercao(1)
 vetor.insercao(2)
 vetor.insercao(3)
-vetor.insercao(1)
 vetor.insercao(4)
-vetor.excluir(3)
-vetor.insercao(-1)
-vetor.insercao(3.4)
-print(vetor.pesquisar(7))
-vetor.impressao()
+vetor.insercao(5)
+
+print(vetor.pesquisa_binaria(5))
 
