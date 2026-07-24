@@ -31,10 +31,14 @@ class VetorOrdenado:
             posicao_atual = int((limite_inferior + limite_superior) / 2)
             if self.vetor[posicao_atual] == valor:
                 return posicao_atual
-            elif valor > self.vetor[posicao_atual]:
-                limite_inferior = posicao_atual + 1
-            elif valor < self.vetor[posicao_atual]:
-                limite_superior = posicao_atual - 1
+            elif limite_inferior > limite_superior:
+                return -1
+            else:
+                if valor > self.vetor[posicao_atual]:
+                    limite_inferior = posicao_atual + 1
+                else:
+                    limite_superior = posicao_atual - 1
+
 
     def insercao(self, valor):
         if self.ultima_posicao == self.capacidade - 1:
@@ -71,5 +75,5 @@ vetor.insercao(3)
 vetor.insercao(4)
 vetor.insercao(5)
 
-print(vetor.pesquisa_binaria(5))
+print(vetor.pesquisa_binaria(6))
 
